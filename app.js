@@ -59,7 +59,7 @@ app.post('/uploadfile',upload.single("sheetfile"),async(req,res)=>{
     res.redirect('/');
     excel2json({
         input:req.file.path,
-        output:"uploads/"+Date.now()+".json",
+        
         lowerCaseHeaders:true
     },async(err,res)=>{
         if(err)

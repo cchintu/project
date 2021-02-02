@@ -13,23 +13,95 @@
         .search input{
             width:300px;
         }
+        h1{
+        
+            border: 8px rgb(10, 37, 73);
+            border-style:inset;
+            background: rgb(233, 236, 238);
+            color:rgb(9, 27, 77);
+            margin-right:500px;
+            margin-left: 500px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        h2{
+            color:black;
+        }
+        h3{
+            color:black;
+        }
+        h4{
+            color:black;
+        }
+        body{
+            background-color:rgb(208, 221, 245);
+            padding:100px
+
+        }
+        table {
+           font-family: arial, sans-serif;
+           border-collapse: collapse;
+           width: 100%;
+           background-color: white;
+           border: 20px rgb(10, 10, 10);
+              }
+
+        td  {
+          border: 1px solid black;
+          text-align: left;
+          padding: 8px;
+              }
+        th{
+            border: 5px solid blue;
+          text-align: left;
+          padding: 8px;
+          color:white;
+
+              }
+
+       tr:nth-child(even) {
+       background-color: #dddddd;
+       border: 1px solid black;
+                }
+                
+      tr:nth-child(odd) {
+       
+       border: 1px solid black;
+                } 
+        .trcr{
+            background-color:blue;
+           
+        }               
+         
     </style>
 </head>
 <body>
-  <h3 style="text-align: center;">Click here to upload Excel Sheet: <button class="btn btn-primary"><a href="upload" style="color:white; text-decoration: none;">Upload</a></button></h3>  
-         <br>
+    <h1 style="text-align: center;">WELCOME!</h1>
+    <br>
   
-  <div class="search">
-               <label for="search"><h4>Search for:</h4></label>
-  <input type="text" name="" id="myInput" placeholder="Search for Names and Roll_no" onkeyup="SearchFun()">
-      </div>
+    <div class="search">
+        <label for="search"><h2 style="text-align: center;">Search :</h2></label>
+<input type="text" name="" id="myInput" placeholder="Search for Names and Roll_no" onkeyup="SearchFun()">
+</div>
+  <br>
+    <h4 style="text-align: center;">Click Here to upload Excel Sheet: <button class="btn btn-primary"><a href="upload" style="color:white; text-decoration: none;">Upload</a></button></h4>  
+         <br>
+
+  
       <br><br>
+      <h3 style="text-align: center;">TABLE</h3>
+      <br>
   <table class="table table-bordered table-sm" id="myTable">
         <thead class="thead-dark">
-            <tr>
-                <th>Name</th>
-                <th>Roll_no</th>
-                <th>Class</th>
+            <tr class="trcr">
+                <th >Name</th>
+                <th >Roll_no</th>
+                <th >Class</th>
+            
             </tr>
         </thead>
         

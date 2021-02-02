@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .search{
+            margin-left: 33%;
+        }
+        .search input{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+  <h3 style="text-align: center;">Click here to upload Excel Sheet: <button class="btn btn-primary"><a href="upload" style="color:white; text-decoration: none;">Upload</a></button></h3>  
+         <br>
+  
+  <div class="search">
+               <label for="search"><h4>Search for:</h4></label>
+  <input type="text" name="" id="myInput" placeholder="Search for Names and Roll_no" onkeyup="SearchFun()">
+      </div>
+      <br><br>
+  <table class="table table-bordered table-sm" id="myTable">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Roll_no</th>
+                <th>Class</th>
+            </tr>
+        </thead>
+        
+            <thead>
+                <% users.forEach(function(row){%>
+                <tr>
+                 <td><%= row.Name%></td> 
+                 <td><%= row.Roll_no%></td> 
+                 <td><%= row.Class%></td> 
+                </tr>
+                <% })%>
+            </thead>
+        
+    </table>
+    <script>
+        const SearchFun = ()=>{
+            let filter = document.getElementById('myInput').value.toUpperCase();
+            let myTable = document.getElementById('myTable');
+            let tr = myTable.getElementsByTagName('tr');
+            for(var i=0;i<tr.length;i++)
+            {
+                let td=tr[i].getElementsByTagName('td')[0];
+                let td1=tr[i].getElementsByTagName('td')[1];
+
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+                    let textvalue1 = td1.textContent || td1.innerHTML;
+                    if(textvalue.toUpperCase().indexOf(filter) > -1 || textvalue1.indexOf(filter) > -1){
+                        tr[i].style.display = "";
+                    }else{
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+</body>
+</html>
